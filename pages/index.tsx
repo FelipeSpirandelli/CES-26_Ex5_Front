@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import axios from 'axios';
 import React, { useState, FC } from 'react';
 import { Inter } from 'next/font/google'
@@ -67,9 +66,14 @@ const MainPage: FC<MainPageProps> = ({ initialData }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await axios.get( `${process.env.NEXT_PUBLIC_BASE_URL}/cidades/getAll`); // 'http://localhost:5000/cidades/getAll
-  console.log(res);
-  return { props: { initialData: res.data } };
+  try {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/cidades/getAll`);
+    return { props: { initialData: res.data } };
+  } catch (error) {
+    console.error("Error fetching data: ", error);
+    return { props: { initialData: [] } };
+  }
 }
+
 
 export default MainPage;
