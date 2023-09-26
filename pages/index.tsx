@@ -67,7 +67,7 @@ const MainPage: FC<MainPageProps> = ({ initialData }) => {
 
 export async function getServerSideProps() {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/cidades/getAll`);
+    const res = await axios.get(`${process.env.BASE_URL}/cidades/getAll`);
     return { props: { initialData: res.data } };
   } catch (error) {
     console.error("Error fetching data: ", error);
