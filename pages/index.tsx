@@ -67,7 +67,7 @@ const MainPage: FC<MainPageProps> = ({ initialData }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await axios.get('http://localhost:5000/cidades/getAll');
+  const res = await axios.get( `${process.env.NEXT_PUBLIC_BASE_URL}/cidades/getAll`); // 'http://localhost:5000/cidades/getAll
   return { props: { initialData: res.data } };
 }
 
