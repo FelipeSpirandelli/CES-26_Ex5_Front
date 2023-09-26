@@ -18,3 +18,7 @@ It has only the index page, since its a single page application. But it uses the
 ### Components Folder
 
 Holds the Navbar and Footer components. 
+
+### Deploy
+
+Está em [link](https://ces-26-ex5-front-j52rml1fn-felipespirandelli.vercel.app/)
