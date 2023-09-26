@@ -35,7 +35,7 @@ const MainPage: FC<MainPageProps> = ({ initialData }) => {
   return (
   <div className="container mx-auto text-gray-700">
     <ul className="list-none">
-      {cities.map((city, index) => (
+      {cities ? cities.map((city, index) => (
         <li
           key={index}
           onClick={() => handleCityClick(city, index)}
@@ -59,7 +59,7 @@ const MainPage: FC<MainPageProps> = ({ initialData }) => {
             </div>
           )}
         </li>
-      ))}
+      )): []}
     </ul>
   </div>
 
